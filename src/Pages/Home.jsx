@@ -3,10 +3,10 @@ import { ReactComponent as MySVG } from "../Assets/newlogo 1.svg";
 import profile from "../Assets/profile.png";
 import { getCookie } from "../Assets/coockie";
 import { Drive } from "./Drive";
-import { S3 } from "./S3";
+import { S3Component } from "./S3";
 export const Home = () => {
   const name = getCookie("username");
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(1);
   return (
     <div className="home-container">
       <div className="header">
@@ -34,7 +34,7 @@ export const Home = () => {
             Google drive
           </button>
         </div>
-        {active === 0 ? <S3 /> : <Drive />}
+        {active === 0 ? <S3Component /> : <Drive />}
       </div>
     </div>
   );
